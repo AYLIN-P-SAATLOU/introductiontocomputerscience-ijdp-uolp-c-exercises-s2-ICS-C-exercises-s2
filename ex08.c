@@ -4,7 +4,6 @@ int main() {
     int numbers[10];
     int sum = 0;
     float average;
-
     
     printf("Enter 10 numbers:\n");
     for (int i = 0; i < 10; i++) {
