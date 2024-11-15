@@ -13,12 +13,11 @@ int main() {
         sum += number;
         count++;
     }
-    
-    printf("\nTotal entry (excluding -1): %d\n", count);
-    printf("Sum: %d\n", sum);
 
     
     if (count > 0) {
+        printf("\nTotal entry (excluding -1): %d\n", count);
+        printf("Sum: %d\n", sum);
         average = (float)sum / count;
         printf("Average: %.2f\n", average);
     } else {
