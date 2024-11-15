@@ -7,23 +7,13 @@ int main() {
     do {
         printf("Enter a positive integer less than 50: ");
         scanf("%d", &number);
-
-        if (number < 0 || number >= 50) {
-            printf("Invalid input. Please enter a positive integer less than 50.\n");
-        }
     } while (number < 0 || number >= 50);
 
-    
     printf("%d! = ", number);
     for (int i = number; i > 0; i--) {
-        printf("%d", i);
-        if (i > 1) {
-            printf(" * ");
-        }
+        printf("%d%s", i, (i > 1) ? " * " : "");
         factorial *= i;
     }
-
     printf(" = %llu\n", factorial);
-
     return 0;
 }
