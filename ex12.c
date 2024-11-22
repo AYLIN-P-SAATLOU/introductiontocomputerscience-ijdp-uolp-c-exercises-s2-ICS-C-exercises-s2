@@ -1,19 +1,17 @@
 #include <stdio.h>
 
 int main() {
-    int number;
-    unsigned long long factorial = 1;
-
+    int n, fact = 1;
+    
     do {
-        printf("Enter a positive integer less than 50: ");
-        scanf("%d", &number);
-    } while (number < 0 || number >= 50);
-
-    printf("%d! = ", number);
-    for (int i = number; i > 0; i--) {
-        printf("%d%s", i, (i > 1) ? " * " : "");
-        factorial *= i;
+        printf("Enter a number (< 50): ");
+        scanf("%d", &n);
+    } while(n >= 50 || n < 0);
+    
+    for(int i = 2; i <= n; i++) {
+        fact *= i;
     }
-    printf(" = %llu\n", factorial);
+    
+    printf("%d! = %d\n", n, fact);
     return 0;
 }
