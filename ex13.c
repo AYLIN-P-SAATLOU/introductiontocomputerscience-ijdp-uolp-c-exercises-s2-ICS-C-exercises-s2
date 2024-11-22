@@ -1,42 +1,17 @@
 #include <stdio.h>
 
-unsigned long long factorial(int n) {
-    if (n == 0 || n == 1) {
-        return 1;
-    } else {
-        return n * factorial(n - 1);
-    }
-}
-
-void display_factorial_expression(int n) {
-    printf("%d! = ", n);
-    for (int i = n; i > 0; i--) {
-        printf("%d", i);
-        if (i > 1) {
-            printf(" * ");
-        }
-    }
+int factorial(int n) {
+    if(n <= 1) return 1;
+    return n * factorial(n-1);
 }
 
 int main() {
-    int number;
-    unsigned long long result;
-
-
+    int n;
     do {
-        printf("Enter a positive integer less than 50: ");
-        scanf("%d", &number);
-
-        if (number < 0 || number >= 50) {
-            printf("Invalid input. Please enter a positive integer less than 50.\n");
-        }
-    } while (number < 0 || number >= 50);
+        printf("Enter a number (< 50): ");
+        scanf("%d", &n);
+    } while(n >= 50 || n < 0);
     
-    display_factorial_expression(number);
-    
-    result = factorial(number);
-
-    printf(" = %llu\n", result);
-
+    printf("%d! = %d\n", n, factorial(n));
     return 0;
 }
